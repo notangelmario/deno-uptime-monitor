@@ -10,7 +10,7 @@ const env = await load();
 const NUMBER_OF_MONITORS = env["NUMBER_OF_MONITORS"];
 
 // Crontab 1m
-const interval = "*/1 * * * *"
+const interval = "0 */6 * * *" // Runs every 6 hours
 const monitors = Array(parseInt(NUMBER_OF_MONITORS)).fill(null).map((_, index) => {
   return {
     url: env[`URL${index}`],
